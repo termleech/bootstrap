@@ -270,6 +270,10 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
               ttScope.title = val;
             });
 
+            attrs.$observe( prefix+'Trigger', function () {
+                prepTriggers();
+            });
+
             function prepPlacement() {
               var val = attrs[ prefix + 'Placement' ];
               ttScope.placement = angular.isDefined( val ) ? val : options.placement;
